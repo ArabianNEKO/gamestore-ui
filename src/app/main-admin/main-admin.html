@@ -1,0 +1,79 @@
+<div class="main-page">
+  <header class="navbar">
+    <div class="logo-text">GameShop</div>
+    <nav class="top-nav">
+      <a href="#" class="nav-link">หน้าหลัก</a>
+      <a href="#" class="nav-link">ร้านค้า</a>
+      <a href="#" class="nav-link admin-link">แอดมิน</a>
+      <a href="#" class="nav-link admin-link">ผู้ใช้งาน</a>
+      <a href="#" class="nav-link">ผู้ใช้งาน</a>
+    </nav>
+    <div class="user-actions">
+        <a href="#" class="user-icon" aria-label="โปรไฟล์">
+            <span class="user-initial">A</span>
+        </a>
+    </div>
+  </header>
+
+<main class="content-container">
+    <section class="best-sellers-section">
+      <h2 class="section-title">5 อันดับเกมขายดี</h2>
+      <div class="game-carousel">
+        <div class="game-card">
+          <div class="game-art borderlands-4"></div>
+          <p class="game-title">Borderland 4</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card hidden-card">
+          <div class="game-art borderlands-4"></div>
+          <p class="game-title">Game 6</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-list-section">
+      <div class="section-header-with-action">
+        <h2 class="section-title full-width no-margin">เกมในร้านค้าทั้งหมด</h2>
+        
+        <button 
+            class="btn-add-game" 
+            (click)="addGame()"
+            aria-label="เพิ่มเกม"
+        >
+            เพิ่มเกม
+        </button>
+      </div>
+
+
+      <div class="game-list">
+        <div class="list-item">
+          <div class="list-item-art cyberpunk-2077"></div>
+          <div class="list-item-title">Cyberpunk 2077</div>
+          <button class="btn-edit-game" aria-label="แก้ไข">แก้ไข</button>
+        </div>
+        <div class="list-item">
+          <div class="list-item-art cyberpunk-2077"></div>
+          <div class="list-item-title">Cyberpunk 2077</div>
+          <button class="btn-edit-game" aria-label="แก้ไข">แก้ไข</button>
+        </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+</div>

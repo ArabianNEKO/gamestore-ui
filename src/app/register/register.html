@@ -1,0 +1,54 @@
+<div class="register-page">
+  <header class="navbar">
+    <div class="logo-text">GameShop</div>
+    <nav>
+      <a href="#" class="nav-link">หน้าแรก</a>
+      <a href="#" class="nav-link login-btn">สมัครสมาชิก</a>
+      <a href="#" class="nav-link">เข้าสู่ระบบ</a>
+    </nav>
+  </header>
+
+  <main class="register-container">
+    <div class="brand-display">
+      <div class="main-logo-area">
+        <span class="gamepad-icon">🎮</span>
+        <h1 class="main-logo-text">GameShop</h1>
+      </div>
+    </div>
+
+    <div class="register-form-area">
+      <h2 class="register-header">สมัครสมาชิก</h2>
+
+      <div class="profile-photo-placeholder">
+        <span class="placeholder-text">รูป</span>
+      </div>
+
+      <form class="register-form" (ngSubmit)="onSubmit()">
+        <input
+          type="text"
+          placeholder="Name"
+          aria-label="Name"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          aria-label="Email"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          aria-label="Password"
+          required
+        />
+
+        <button type="submit" class="btn-create-account">Create Account</button>
+      </form>
+
+      <div class="login-link-area">
+        <p>Already have account? <a href="#" class="log-in-link">Log In</a></p>
+      </div>
+    </div>
+  </main>
+</div>

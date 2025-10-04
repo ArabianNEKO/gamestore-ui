@@ -1,0 +1,85 @@
+<div class="profile-page">
+  <header class="navbar">
+    <div class="logo-text">GameShop</div>
+    <nav class="top-nav">
+      <a href="#" class="nav-link">หน้าหลัก</a>
+      <a href="#" class="nav-link">ร้านค้า</a>
+      <a href="#" class="nav-link">คลังเกม</a>
+      <a href="#" class="nav-link">กระเป๋าเงิน</a>
+    </nav>
+    <div class="user-actions">
+      <a href="#" class="cart-icon" aria-label="ตะกร้าสินค้า">🛒</a>
+      <a href="#" class="user-icon current-page" aria-label="โปรไฟล์">
+        <span class="user-initial">A</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="profile-container">
+    <div class="profile-card">
+      <h2 class="header-title">แก้ไขโปรไฟล์ของคุณ</h2>
+
+      <div class="profile-picture-area">
+        <div class="profile-photo">
+          <span class="user-icon-placeholder">👤</span>
+        </div>
+      </div>
+
+      <form class="profile-form" (ngSubmit)="onSubmit()">
+        <div class="section-group">
+          <div class="input-field name-field">
+            <label for="username">ชื่อผู้ใช้</label>
+            <input type="text" id="username" value="Md" aria-label="ชื่อผู้ใช้" />
+          </div>
+          <div class="input-field email-field">
+            <label for="email">อีเมล</label>
+            <input
+              type="email"
+              id="email"
+              value="rimell111@gmail.com"
+              aria-label="อีเมล"
+              readonly
+              disabled
+            />
+          </div>
+        </div>
+
+        <h3 class="section-header">เปลี่ยนรหัสผ่าน</h3>
+        <div class="password-group">
+          <div class="input-field">
+            <label for="current-password">รหัสผ่านเดิม</label>
+            <input
+              type="password"
+              id="current-password"
+              placeholder="รหัสผ่านเดิม"
+              aria-label="รหัสผ่านเดิม"
+            />
+          </div>
+          <div class="input-field">
+            <label for="new-password">รหัสผ่านใหม่</label>
+            <input
+              type="password"
+              id="new-password"
+              placeholder="รหัสผ่านใหม่"
+              aria-label="รหัสผ่านใหม่"
+            />
+          </div>
+          <div class="input-field">
+            <label for="confirm-new-password">ยืนยันรหัสผ่านใหม่</label>
+            <input
+              type="password"
+              id="confirm-new-password"
+              placeholder="ยืนยันรหัสผ่านใหม่"
+              aria-label="ยืนยันรหัสผ่านใหม่"
+            />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel">ยกเลิก</button>
+          <button type="submit" class="btn-submit">ยืนยันการเปลี่ยนแปลง</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>

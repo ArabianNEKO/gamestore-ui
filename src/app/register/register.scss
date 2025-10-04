@@ -1,0 +1,221 @@
+/* /src/app/register/register.component.scss */
+
+// กำหนดสีพื้นฐาน (ใช้ค่าเดียวกับหน้า Login)
+$primary-color: #e53935; // สีแดงสำหรับปุ่ม
+$dark-text: #333;
+$light-text: #666;
+$white: #fff;
+
+/* --- โครงสร้างพื้นฐานและ Navbar (เหมือนหน้า Login) --- */
+.register-page {
+  min-height: 100vh;
+  background-color: $white;
+  font-family:
+    'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: $white;
+  border-bottom: 1px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: $dark-text;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+
+    .nav-link {
+      text-decoration: none;
+      color: $light-text;
+      padding: 5px 10px;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .login-btn {
+      font-weight: bold;
+      color: $dark-text; // ทำให้ "สมัครสมาชิก" เด่นขึ้น
+    }
+  }
+}
+
+/* --- Register Container (ส่วนเนื้อหาหลัก) สไตล์ --- */
+.register-container {
+  display: grid;
+  // แบ่งพื้นที่เป็น 2 ส่วน: โลโก้ และ ฟอร์ม
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+/* สไตล์สำหรับส่วนโลโก้ใหญ่ด้านซ้าย (เหมือนหน้า Login) */
+.brand-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 50px;
+
+  .main-logo-area {
+    display: flex;
+    align-items: center;
+
+    .gamepad-icon {
+      font-size: 60px;
+      margin-right: 15px;
+      color: $dark-text;
+    }
+
+    .main-logo-text {
+      font-size: 48px;
+      font-weight: bold;
+      color: $dark-text;
+    }
+  }
+}
+
+/* สไตล์สำหรับส่วนฟอร์มด้านขวา */
+.register-form-area {
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  // จัดองค์ประกอบทั้งหมดให้อยู่ตรงกลางตามแนวแกนหลัก
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // ชิดซ้าย
+
+  .register-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: $dark-text;
+    margin-bottom: 30px;
+  }
+
+  // วงกลมสำหรับรูปโปรไฟล์
+  .profile-photo-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .placeholder-text {
+      color: $white;
+      font-weight: bold;
+    }
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    .btn-create-account {
+      margin-top: 5px;
+      padding: 10px 20px;
+      background-color: $primary-color;
+      color: $white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      width: 100%; // ให้ปุ่มยาวเต็มความกว้าง
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .login-link-area {
+    margin-top: 20px;
+    font-size: 14px;
+    color: $light-text;
+
+    .log-in-link {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: bold;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Media Query สำหรับหน้าจอขนาดเล็ก (เช่น มือถือ)
+@media (max-width: 768px) {
+  .register-container {
+    grid-template-columns: 1fr; // เหลือแค่ 1 คอลัมน์
+    height: auto;
+    padding: 80px 20px 20px 20px;
+
+    .brand-display {
+      display: none; // ซ่อนโลโก้ใหญ่บนมือถือ
+    }
+
+    .register-form-area {
+      max-width: 100%;
+      padding: 0;
+      align-items: center; // จัดทุกอย่างให้อยู่ตรงกลาง
+
+      .register-header {
+        align-self: flex-start; // ชิดซ้ายเหมือนเดิม
+        margin-top: 20px;
+      }
+      
+      .profile-photo-placeholder {
+        // อาจจะยังคงอยู่ตรงกลาง
+      }
+
+      .login-link-area {
+        align-self: center;
+      }
+    }
+  }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+}
