@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-admin',
@@ -7,26 +8,26 @@ import { Component } from '@angular/core';
   styleUrl: './main-admin.scss'
 })
 export class MainAdmin {
+ constructor(private router: Router) {} // Inject Router
+
   onSubmit(): void {
     console.log('Add Game Form Submitted. Proceeding to save game data...');
-    // **ลอจิกจริง:** จะรวบรวมข้อมูลฟอร์มและเรียก service เพื่อส่งไปยัง API
-    
-    // ตัวอย่างการแสดงผลว่าฟอร์มส่งแล้ว
     alert('บันทึกเกมใหม่เรียบร้อยแล้ว!');
-    // this.router.navigate(['/']); // นำทางกลับไปยังหน้าหลัก
+    this.router.navigate(['/']); // Navigate back to the main page
   }
 
   onCancel(): void {
     console.log('Action cancelled. Navigating back...');
-    // **ลอจิกจริง:** นำทางกลับไปยังหน้ารายการเกมหลัก
-    // this.router.navigate(['/']);
+    this.router.navigate(['/']); // Navigate back to the main game list
   }
-  constructor() {}
 
-    // **ต้องมีเมธอดนี้อยู่ในคลาส**
-    addGame(): void {
-        console.log('Admin clicked Add Game. Navigating to Add Game form...');
-        // ลอจิกการนำทางไปยังหน้าเพิ่มเกม
-        // ตัวอย่าง: this.router.navigate(['/admin/add-game']);
-    }
+  addGame(): void {
+    console.log('Admin clicked Add Game. Navigating to Add Game form...');
+    this.router.navigate(['/admin/add-game']); // Navigate to Add Game form
+  }
+
+  editGame(): void {
+  console.log('Navigating to Edit Game page...');
+  this.router.navigate(['/admin/edit-game']); // Navigate to the Edit Game page
+}
 }

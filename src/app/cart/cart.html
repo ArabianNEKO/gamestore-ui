@@ -1,0 +1,80 @@
+<div class="cart-page">
+  <header class="navbar">
+    <div class="logo-text">GameShop</div>
+    <nav class="top-nav">
+      <a href="#" class="nav-link">หน้าหลัก</a>
+      <a href="#" class="nav-link">ร้านค้า</a>
+      <a href="#" class="nav-link current-page">คลังเกม</a>
+      <a href="#" class="nav-link">กระเป๋าเงิน</a>
+    </nav>
+    <div class="user-actions">
+      <a href="#" class="cart-icon" aria-label="ตะกร้าสินค้า">🛒</a>
+      <a href="#" class="user-icon" aria-label="โปรไฟล์">
+        <span class="user-initial">A</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <h1 class="main-header">รถเข็นของคุณ</h1>
+
+    <div class="cart-layout">
+      <div class="cart-items-column">
+        <h2 class="section-title">รายการ</h2>
+        
+        <div class="cart-item-card">
+          <div class="item-art hollow-knight"></div>
+          <div class="item-details">
+            <div class="item-name">Hollow Knight: SilkSong</div>
+            <span class="item-tag">Action</span>
+            <button class="btn-remove">ลบ</button>
+          </div>
+          <div class="item-price">679 บาท</div>
+        </div>
+
+        <div class="cart-item-card">
+          <div class="item-art terraria"></div>
+          <div class="item-details">
+            <div class="item-name">Terraria</div>
+            <span class="item-tag">Sandbox</span>
+            <button class="btn-remove">ลบ</button>
+          </div>
+          <div class="item-price">179 บาท</div>
+        </div>
+        
+        </div>
+
+      <div class="summary-column">
+        <h2 class="section-title">ค่าใช้จ่าย</h2>
+        <div class="summary-box">
+          
+          <div class="summary-row total-row">
+            <span class="label">ยอดรวม</span>
+            <span class="value">858 บาท</span>
+          </div>
+          
+          <div class="summary-row discount-row">
+            <span class="label">ส่วนลด</span>
+            <span class="value discount-value">- 50 บาท</span>
+          </div>
+          
+          <hr class="summary-divider">
+
+          <div class="summary-row grand-total-row">
+            <span class="label">ต้องจ่าย</span>
+            <span class="value grand-total-value">808 บาท</span>
+          </div>
+
+          <div class="discount-code-form">
+            <input type="text" placeholder="ใส่โค้ดส่วนลด" aria-label="โค้ดส่วนลด" />
+            <button class="btn-apply">ยืนยัน</button>
+          </div>
+          
+          <button class="btn-checkout" (click)="checkout()">ยืนยันการจ่าย</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+</div>

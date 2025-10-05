@@ -1,0 +1,210 @@
+/* /src/app/library/library.component.scss */
+
+// กำหนดสีพื้นฐาน
+$primary-red: #e53935;
+$dark-text: #333;
+$light-text: #666;
+$white: #fff;
+$card-bg: $white;
+$sidebar-bg: #f5f5f5; // พื้นหลังสีเทาอ่อนสำหรับ Sidebar
+
+/* --- โครงสร้างพื้นฐานและ Navbar --- */
+.library-page {
+  min-height: 100vh;
+  background-color: $card-bg;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+// Navbar styles (ใช้สไตล์เดิมที่เคยสร้าง)
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: $white;
+  border-bottom: 1px solid #eee;
+
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: $dark-text;
+  }
+
+  .top-nav {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+
+    .nav-link {
+      text-decoration: none;
+      color: $dark-text;
+      padding: 5px 10px;
+
+      &:hover,
+      &.current-page {
+        $primary-blue: #1e88e5;
+      }
+    }
+  }
+}
+
+/* --- Content Container --- */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* --- Library Layout (Grid) --- */
+.library-layout {
+  display: grid;
+  // แบ่งเป็น Sidebar 1 ส่วน และ Game Display 3 ส่วน (3fr)
+  grid-template-columns: 1fr 3fr; 
+  gap: 30px;
+}
+
+/* --- คอลัมน์ซ้าย: Sidebar (ตัวกรอง) --- */
+.sidebar {
+    background-color: $sidebar-bg;
+    padding: 20px;
+    border-radius: 4px;
+     box-sizing: border-box; 
+    
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        
+        label {
+            font-size: 18px;
+            color: $dark-text;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+    }
+    
+    .search-group {
+        margin-bottom: 30px;
+        box-sizing: border-box; // เพิ่มที่นี่อีกชั้นเพื่อความชัวร์
+        
+        .search-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: $dark-text;
+            margin-bottom: 10px;
+        }
+        
+         .search-input-box {
+            position: relative;
+            
+            input {
+                width: 100%; // ตั้งความกว้างเต็ม 100%
+                padding: 8px 10px 8px 30px; 
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                // **ส่วนสำคัญ: ต้องเพิ่ม box-sizing: border-box;**
+                // เพื่อให้ padding และ border ถูกรวมอยู่ในความกว้าง 100%
+                box-sizing: border-box; 
+            }
+            .search-icon {
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $light-text;
+            }
+        }
+    }
+    
+    .game-list-names {
+        .list-header {
+            font-size: 16px;
+            font-weight: bold;
+            color: $dark-text;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .game-name-item {
+            padding: 8px 10px;
+            font-size: 14px;
+            color: $dark-text;
+            cursor: pointer;
+            
+            &.selected {
+                background-color: #ccc; // พื้นหลังสีเทาอ่อนเมื่อเลือก
+                font-weight: 500;
+            }
+            
+            &:hover:not(.selected) {
+                background-color: #eee;
+            }
+        }
+    }
+}
+
+/* --- คอลัมน์ขวา: Game Display --- */
+.game-display {
+    
+    .display-header {
+        font-size: 24px;
+        font-weight: bold;
+        color: $dark-text;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $primary-red; // เส้นขีดสีแดง
+    }
+    
+    .game-grid {
+        display: grid;
+        // จัดเป็น 4 คอลัมน์
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
+        
+        .game-card {
+            .game-art {
+                width: 100%;
+                // อัตราส่วนภาพปกเกม
+                padding-top: 140%; 
+                background-size: cover;
+                background-position: center;
+                border-radius: 4px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+            
+            // Placeholder styles สำหรับรูปภาพปกเกม
+            .silksong { background-color: #b71c1c; }
+            .pointblank { background-color: #455a64; }
+            .honkai3rd { background-color: #7b1fa2; }
+            .starrail { background-color: #1565c0; }
+            .terraria-art { background-color: #795548; }
+            .infinity-nikki { background-color: #ff80ab; }
+        }
+    }
+}
+
+/* --- Footer สีดำ --- */
+.dark-footer {
+  height: 100px;
+  background-color: #000;
+  width: 100%;
+  margin-top: 40px;
+}
+
+// Media Query สำหรับหน้าจอขนาดเล็ก
+@media (max-width: 900px) {
+  .library-layout {
+    grid-template-columns: 1fr; // เหลือแค่ 1 คอลัมน์บนจอเล็ก
+    gap: 20px;
+  }
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr); // เหลือ 2 คอลัมน์บนจอเล็ก
+  }
+}
