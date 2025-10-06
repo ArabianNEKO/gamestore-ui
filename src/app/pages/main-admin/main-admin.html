@@ -1,0 +1,108 @@
+<app-header></app-header>
+<div class="main-page">
+<main class="content-container">
+    <section class="best-sellers-section">
+      <h2 class="section-title">5 อันดับเกมขายดี</h2>
+      <div class="game-carousel">
+        <div class="game-card">
+          <div class="game-art borderlands-4"></div>
+          <p class="game-title">Borderland 4</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card">
+          <div class="game-art sonic-racing"></div>
+          <p class="game-title">Sonic Racing</p>
+        </div>
+        <div class="game-card hidden-card">
+          <div class="game-art borderlands-4"></div>
+          <p class="game-title">Game 6</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-list-section">
+     <div class="section-header-with-action">
+  <div class="header-row">
+    <h2 class="section-title full-width no-margin">เกมในร้านค้าทั้งหมด</h2>
+    <button 
+      class="btn-add-game" 
+      (click)="addGame()"
+      aria-label="เพิ่มเกม"
+    >
+      เพิ่มเกม
+    </button>
+  </div>
+
+  <div class="search-filter-bar">
+    <div class="filter-dropdown">
+      <select aria-label="ประเภทเกม">
+        <option>ประเภท</option>
+        <option selected>ทั้งหมด</option>
+      </select>
+    </div>
+
+    <div class="search-input-group">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Value" aria-label="ค้นหาเกม" />
+      <span class="clear-icon">×</span>
+    </div>
+  </div>
+</div>
+
+
+      <div class="game-list">
+   <div class="list-item">
+  <div class="list-item-left">
+    <div class="list-item-art cyberpunk-2077"></div>
+    <div class="list-item-title">Cyberpunk 2077</div>
+  </div>
+ <button 
+  class="btn-edit-game" 
+  aria-label="แก้ไข" 
+  (click)="editGame()"
+>
+  แก้ไข
+</button>
+</div>
+<div class="list-item">
+  <div class="list-item-left">
+    <div class="list-item-art cyberpunk-2077"></div>
+    <div class="list-item-title">Cyberpunk 2077</div>
+  </div>
+ <button 
+  class="btn-edit-game" 
+  aria-label="แก้ไข" 
+  (click)="editGame()"
+>
+  แก้ไข
+</button>
+</div>
+<div class="list-item">
+  <div class="list-item-left">
+    <div class="list-item-art cyberpunk-2077"></div>
+    <div class="list-item-title">Cyberpunk 2077</div>
+  </div>
+  <button 
+  class="btn-edit-game" 
+  aria-label="แก้ไข" 
+  (click)="editGame()"
+>
+  แก้ไข
+</button>
+</div>
+        </div>
+    </section>
+  </main>
+</div>
+<app-footer></app-footer>

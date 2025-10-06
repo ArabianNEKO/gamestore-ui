@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+
+  <main class="login-container">
+    <div class="brand-display">
+      <div class="main-logo-area">
+        <span class="gamepad-icon">🎮</span>
+        <h1 class="main-logo-text">GameShop</h1>
+      </div>
+    </div>
+
+    <div class="login-form-area">
+      <h2 class="login-header">
+        เข้าสู่ระบบ<br />
+        <span class="tagline">ร้านค้าที่ขายถูกที่สุด</span>
+      </h2>
+
+      <form class="login-form" (ngSubmit)="onSubmit()">
+        <input
+          type="text"
+          placeholder="Email or Username"
+          aria-label="Email or Username"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          aria-label="Password"
+          required
+        />
+
+        <div class="form-actions">
+          <button type="submit" class="btn-login">เข้าสู่ระบบ</button>
+          <a href="#" class="forgot-password">ลืมรหัสผ่าน ?</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+/* --- Navbar (เหมือนหน้าอื่นๆ) --- */
+// กำหนดสีพื้นฐาน
+$primary-red: #e53935;
+$primary-blue: #2979ff;
+$success-green: #4caf50; // สีเขียวสำหรับเติมเงิน
+$error-red: $primary-red; // สีแดงสำหรับซื้อเกม
+$dark-text: #333;
+$light-text: #666;
+$white: #fff;
+$card-bg: $white;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: $white;
+  border-bottom: 1px solid #eee;
+
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: $dark-text;
+  }
+
+  .top-nav {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+
+    .nav-link {
+      text-decoration: none;
+      color: $dark-text;
+      padding: 5px 10px;
+
+      &:hover,
+      &.current-page {
+        color: $primary-blue;
+      }
+    }
+  }
+}

@@ -1,18 +1,18 @@
 import { Routes } from '@angular/router';
-import { Login } from './login/login';
-import { Register } from './register/register';
-import { Profile } from './profile/profile';
-import { Main } from './main/main';
-import { MainAdmin } from './main-admin/main-admin';
-import { GameDetail } from './game-detail/game-detail';
-import { Cart } from './cart/cart';
-import { Wallet } from './wallet/wallet';
-import { Library } from './library/library';
-import { AddGame } from './add-game/add-game';
-import { EditGame } from './edit-game/edit-game';
-
+import { Main } from './pages/main/main';
+import { Login } from './pages/login/login';
+import { Register } from './pages/register/register';
+import { Profile } from './pages/profile/profile';
+import { MainAdmin } from './pages/main-admin/main-admin';
+import { GameDetail } from './pages/game-detail/game-detail';
+import { Cart } from './pages/cart/cart';
+import { Wallet } from './pages/wallet/wallet';
+import { Library } from './pages/library/library';
+import { AddGame } from './pages/add-game/add-game';
+import { EditGame } from './pages/edit-game/edit-game';
 export const routes: Routes = [
-     { path: '', component: Main },
+    
+    { path: '', component: Main },
     { path: 'login', component: Login },
     { path: 'register', component: Register },
     { path: 'profile', component: Profile },

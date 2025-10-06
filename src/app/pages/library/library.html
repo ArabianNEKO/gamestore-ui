@@ -1,0 +1,74 @@
+<app-header></app-header>
+<div class="library-page">
+  <main class="content-container">
+    <div class="library-layout">
+      <div class="sidebar">
+        <div class="filter-group">
+          <label for="game-type">ประเภท: ทั้งหมด</label>
+          <select id="game-type" (change)="filterByType($event)">
+            <option value="all">ทั้งหมด</option>
+            <option value="action">Action</option>
+            <option value="rpg">RPG</option>
+            <option value="sandbox">Sandbox</option>
+          </select>
+        </div>
+
+        <div class="search-group">
+          <h3 class="search-title">ค้นหาเกม</h3>
+          <div class="search-input-box">
+            <input 
+              type="text" 
+              placeholder="ค้นหาเกม" 
+              (input)="searchGame($event)"
+            />
+            <span class="search-icon">🔍</span>
+          </div>
+        </div>
+        
+        <div class="game-list-names">
+            <h4 class="list-header">ทั้งหมด</h4>
+            <div class="game-name-item selected">Hollow Knight: SilkSong</div>
+            <div class="game-name-item">Point Blank</div>
+            <div class="game-name-item">Honkai Impact 3rd</div>
+            <div class="game-name-item">Honkai: Star Rail</div>
+            <div class="game-name-item">Terraria</div>
+            <div class="game-name-item">Infinity Nikki</div>
+        </div>
+
+      </div>
+
+      <div class="game-display">
+        <h2 class="display-header">เกมของคุณ (6)</h2>
+        <div class="game-grid">
+          
+          <div class="game-card">
+            <div class="game-art silksong"></div>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-art pointblank"></div>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-art honkai3rd"></div>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-art starrail"></div>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-art terraria-art"></div>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-art infinity-nikki"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>

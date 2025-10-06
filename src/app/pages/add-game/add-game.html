@@ -1,0 +1,80 @@
+<app-header></app-header>
+<div class="add-game-page">
+  <main class="content-container">
+    <div class="form-card">
+      <h2 class="header-title red-accent">เพิ่มเกม</h2>
+
+      <form class="add-game-form" (ngSubmit)="onSubmit()">
+        
+        <div class="input-field full-width">
+          <label for="game-name">ชื่อเกม</label>
+          <input type="text" id="game-name" placeholder="ตัวอย่าง เช่น Minecraft: Ragnarok" required />
+        </div>
+
+        <div class="section-group price-category-group">
+          <div class="input-field half-width">
+            <label for="price">ราคา</label>
+            <div class="input-with-label">
+              <input type="number" id="price" placeholder="เช่น 29, 654, 67" required min="0" />
+              <span class="unit">บาท</span>
+            </div>
+          </div>
+          <div class="input-field half-width">
+            <label for="category">หมวดหมู่</label>
+            <select id="category" required>
+              <option value="" disabled selected>เลือกหมวดหมู่</option>
+              <option value="action">Action</option>
+              <option value="rpg">RPG</option>
+              </select>
+          </div>
+        </div>
+        
+        <div class="input-field full-width">
+          <label for="description">รายละเอียดเกม</label>
+          <textarea id="description" placeholder="รายละเอียดของเกม"></textarea>
+        </div>
+        
+        <div class="input-field full-width">
+          <label for="video-link">ใส่ link วิดีโอตัวอย่าง</label>
+          <input type="text" id="video-link" placeholder="ใส่ url youtube กับ embed sized" />
+        </div>
+        
+        <div class="section-group image-upload-group">
+          <div class="upload-field half-width">
+            <label>ใส่รูปภาพปก</label>
+            <div class="upload-placeholder">
+              <input type="file" id="cover-image" accept="image/*" />
+              <div class="upload-text">อัพโหลดรูปภาพปกเกม</div>
+            </div>
+          </div>
+          <div class="upload-field half-width">
+            <label>ใส่รูปภาพวิดีโอ</label>
+            <div class="upload-placeholder">
+              <input type="file" id="video-image" accept="image/*" />
+              <div class="upload-text">อัพโหลดรูปภาพวิดีโอ</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="upload-field full-width">
+          <label>ใส่รูปภาพเกม/ส่วนเสริม</label>
+          <div class="upload-placeholder large">
+            <input type="file" id="game-images" accept="image/*" multiple />
+            <div class="upload-text">อัพโหลดรูปภาพเกม หรือรูปภาพส่วนเสริม (ได้หลายภาพ)</div>
+          </div>
+        </div>
+        
+        <div class="input-field full-width">
+          <label for="release-date">วันวางจำหน่าย</label>
+          <input type="date" id="release-date" placeholder="วัน/เดือน/ปี (อาจจะเป็นวันวางจำหน่ายวันนี้ที่เป็นการอัพเดตเกม)" />
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" (click)="onCancel()">ยกเลิก</button>
+          <button type="submit" class="btn-submit blue-btn">บันทึกรายการเกม</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+<app-footer></app-footer>

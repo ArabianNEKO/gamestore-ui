@@ -1,0 +1,80 @@
+<app-header></app-header>
+<div class="wallet-page">
+
+  <main class="content-container">
+    <h1 class="main-header">กระเป๋าเงินของคุณ</h1>
+
+    <section class="balance-section card">
+      <h2 class="section-title">ยอดเงินคงเหลือ</h2>
+      <div class="balance-display">
+        <span class="balance-amount">120000</span>
+        <span class="currency">บาท</span>
+      </div>
+    </section>
+    
+    <section class="topup-section card">
+      <h2 class="section-title">เติมเงินเข้ากระเป๋า</h2>
+      <div class="topup-options">
+        <button class="amount-btn" (click)="selectAmount(20)">20</button>
+        <button class="amount-btn" (click)="selectAmount(50)">50</button>
+        <button class="amount-btn selected" (click)="selectAmount(100)">100</button>
+        <button class="amount-btn" (click)="selectAmount(500)">500</button>
+        <button class="amount-btn" (click)="selectAmount(1000)">1000</button>
+      </div>
+
+      <div class="topup-input-group">
+        <input 
+          type="number" 
+          placeholder="ใส่จำนวนเงินที่ต้องการ" 
+          aria-label="จำนวนเงินเติมเข้ากระเป๋า"
+          [value]="selectedAmount"
+        />
+        <button class="btn-topup" (click)="confirmTopup()">ยืนยันการเติมเงิน</button>
+      </div>
+    </section>
+
+    <section class="history-section">
+      <h2 class="section-title">ประวัติธุรกรรม</h2>
+      <div class="transaction-list">
+        
+        <div class="transaction-item positive">
+          <div class="icon">+</div>
+          <div class="details">
+            <div class="desc">เติมเงิน</div>
+            <div class="note">ทำรายการเติมเงินเข้ากระเป๋า</div>
+          </div>
+          <div class="amount">+ 1000 บาท</div>
+        </div>
+
+        <div class="transaction-item negative">
+          <div class="icon">-</div>
+          <div class="details">
+            <div class="desc">ซื้อเกม</div>
+            <div class="note">ทำรายการซื้อเกม Hollow Knight: SilkSong</div>
+          </div>
+          <div class="amount">- 679 บาท</div>
+        </div>
+
+        <div class="transaction-item positive">
+          <div class="icon">+</div>
+          <div class="details">
+            <div class="desc">เติมเงิน</div>
+            <div class="note">ทำรายการเติมเงินเข้ากระเป๋า</div>
+          </div>
+          <div class="amount">+ 1000 บาท</div>
+        </div>
+        
+        <div class="transaction-item negative">
+          <div class="icon">-</div>
+          <div class="details">
+            <div class="desc">ซื้อเกม</div>
+            <div class="note">ทำรายการซื้อเกม Terraria ใช้โค้ดส่วนลด TR123 ในการซื้อ</div>
+          </div>
+          <div class="amount">- 79 บาท</div>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+</div>
+<app-footer></app-footer>
