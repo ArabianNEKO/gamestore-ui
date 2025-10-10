@@ -28,7 +28,7 @@
           <td>{{ user.username }}</td>
           <td>{{ user.email }}</td>
           <td>
-            <button class="btn btn-view" (click)="viewUser(user.user_id)">ดู</button>
+            <a [routerLink]="['/user', user.user_id]" class="btn btn-view">ดู</a>
             <button class="btn btn-delete" (click)="deleteUser(user.user_id)">ลบ</button>
           </td>
         </tr>

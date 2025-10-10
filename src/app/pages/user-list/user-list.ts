@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 // สร้าง Interface เพื่อกำหนดโครงสร้างข้อมูล User
 export interface User {
@@ -13,7 +14,7 @@ export interface User {
 
 @Component({
   selector: 'app-user-list',
-  imports: [CommonModule,Header,Footer,FormsModule],
+  imports: [CommonModule,Header,Footer,FormsModule,RouterModule],
   templateUrl: './user-list.html',
   styleUrl: './user-list.scss'
 })

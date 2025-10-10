@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="profile-container" *ngIf="user; else notFound">
+
+  <h2 class="section-header">ข้อมูลของ {{ user.username }}</h2>
+  <div class="card profile-card">
+    <div class="profile-tabs">
+      <a class="tab-item active">โปรไฟล์</a>
+    </div>
+    <div class="profile-body">
+      <div class="avatar-container">
+        </div>
+      <div class="details-container">
+        <div class="form-group">
+          <label>ชื่อผู้ใช้</label>
+          <input type="text" [value]="user.username" readonly>
+        </div>
+        <div class="form-group">
+          <label>อีเมล</label>
+          <input type="text" [value]="user.email" readonly>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-header">ประวัติธุรกรรม</h2>
+  <div class="card transaction-card">
+    <div class="transaction-list">
+      <div class="transaction-item" *ngFor="let tx of user.transactions">
+        <div class="icon-container" [ngClass]="tx.type">
+          <span>{{ tx.type === 'deposit' ? '+' : '-' }}</span>
+        </div>
+        <div class="tx-details">
+          <strong>{{ tx.title }}</strong>
+          <p>{{ tx.description }}</p>
+        </div>
+        <div class="tx-amount" [ngClass]="tx.amount > 0 ? 'positive' : 'negative'">
+          {{ tx.amount > 0 ? '+' : '' }} {{ tx.amount }} บาท
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<ng-template #notFound>
+  <div class="profile-container">
+    <p class="not-found-message">ไม่พบข้อมูลผู้ใช้</p>
+  </div>
+</ng-template>
+
+<app-footer></app-footer>

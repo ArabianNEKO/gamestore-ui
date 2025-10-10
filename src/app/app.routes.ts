@@ -12,6 +12,7 @@ import { AddGame } from './pages/add-game/add-game';
 import { EditGame } from './pages/edit-game/edit-game';
 import { UserList } from './pages/user-list/user-list';
 import { DiscountCode } from './pages/discount-code/discount-code';
+import { UserHistory } from './pages/user-history/user-history';
 export const routes: Routes = [
     
     { path: '', component: Main },
@@ -26,5 +27,6 @@ export const routes: Routes = [
     { path: 'admin/add-game', component: AddGame },
     { path: 'admin/edit-game', component: EditGame },
     { path:  'admin/user-list', component: UserList },
-    { path:  'admin/discount', component: DiscountCode }
+    { path:  'admin/discount', component: DiscountCode },
+    { path: 'admin/user-history', component: UserHistory },
 ];
