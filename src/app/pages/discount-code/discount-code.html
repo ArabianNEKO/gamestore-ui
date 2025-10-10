@@ -1,0 +1,96 @@
+<app-header></app-header>
+<div class="page-container">
+  <div class="card">
+    <h2 class="section-title">สร้างโค้ดส่วนลด</h2>
+    <form (ngSubmit)="createDiscountCode()" #discountForm="ngForm" class="discount-form">
+
+      <div class="form-group">
+        <label for="codeName">ชื่อโค้ดลดราคา</label>
+        <input
+          type="text"
+          id="codeName"
+          name="codeName"
+          [(ngModel)]="newCode.name"
+          placeholder="ใช้ได้กับเกม เช่น Minecraft, Ragnarok"
+          required
+        >
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="discountValue">ลดราคา</label>
+          <div class="input-with-addon">
+            <input
+              type="number"
+              id="discountValue"
+              name="discountValue"
+              [(ngModel)]="newCode.discountValue"
+              placeholder="เช่น 29, 100, 50"
+              required
+            >
+            <span>บาท</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="limit">จำนวนคน</label>
+          <div class="input-with-addon">
+            <input
+              type="number"
+              id="limit"
+              name="limit"
+              [(ngModel)]="newCode.limit"
+              placeholder="เช่น 5, 10, 15"
+              required
+            >
+            <span>คน</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row form-actions">
+        <div class="form-group">
+          <label for="code">รหัส</label>
+          <input
+            type="text"
+            id="code"
+            name="code"
+            [(ngModel)]="newCode.code"
+            placeholder="เช่น SUMMER2024"
+            required
+            #codeInput="ngModel"
+          >
+        </div>
+        <button type="submit" class="btn-submit" [disabled]="!discountForm.form.valid">
+          ยืนยันการเปลี่ยนแปลง
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">โค้ดที่มี</h2>
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ชื่อโค้ด</th>
+            <th>ลดราคา</th>
+            <th>จำนวนคนที่ใช้</th>
+            <th>จำกัด</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of existingCodes">
+            <td>{{ item.code }}</td>
+            <td>{{ item.discountValue }}</td>
+            <td>{{ item.usedCount }}</td>
+            <td>{{ item.limit }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
