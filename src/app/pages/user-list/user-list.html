@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="user-list-container">
+  <h2 class="page-title">รายชื่อผู้ใช้</h2>
+
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="ค้นหาผู้ใช้ (ชื่อหรืออีเมล)"
+      [(ngModel)]="searchTerm"
+      (input)="searchUser()"
+    />
+    <i class="search-icon"></i>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>user_id</th>
+          <th>username</th>
+          <th>email</th>
+          <th>จัดการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+          <td>{{ user.user_id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="btn btn-view" (click)="viewUser(user.user_id)">ดู</button>
+            <button class="btn btn-delete" (click)="deleteUser(user.user_id)">ลบ</button>
+          </td>
+        </tr>
+
+        <tr *ngIf="filteredUsers.length === 0">
+          <td colspan="4" class="no-data">ไม่พบข้อมูลผู้ใช้</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

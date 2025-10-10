@@ -10,6 +10,7 @@ import { Wallet } from './pages/wallet/wallet';
 import { Library } from './pages/library/library';
 import { AddGame } from './pages/add-game/add-game';
 import { EditGame } from './pages/edit-game/edit-game';
+import { UserList } from './pages/user-list/user-list';
 export const routes: Routes = [
     
     { path: '', component: Main },
@@ -23,4 +24,5 @@ export const routes: Routes = [
     { path: 'library', component: Library },
     { path: 'admin/add-game', component: AddGame },
     { path: 'admin/edit-game', component: EditGame },
+    { path:  'admin/user-list', component: UserList }
 ];
